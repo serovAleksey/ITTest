@@ -1,0 +1,209 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  background: #121212;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+}
+.newGame {
+  padding: 15px;
+  background: #272727;
+  color: inherit;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 300ms ease-in-out;
+}
+.newGame:hover {
+  border: 1px solid #83dfc4;
+}
+.infoBox {
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #272727;
+  padding: 20px 30px;
+  color: #f7c689;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+.infoBox #timer {
+  display: flex;
+}
+.infoBox #timer::before {
+  content: 'Ваше время:  ';
+  display: block;
+  position: relative;
+  margin-right: 5px;
+}
+.infoBox #score {
+  display: flex;
+}
+.infoBox #score::before {
+  content: 'Очки: ';
+  display: block;
+  position: relative;
+  margin-right: 5px;
+}
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+#saper {
+  margin: 0 auto;
+  background: #272727;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  filter: blur(0px);
+  transition: all 300ms ease-in-out;
+}
+#saper.blur {
+  filter: blur(1px);
+}
+#saper .element {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid #121212;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 50px;
+}
+#saper .element.element--flagged {
+  background: #f7c689;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+#saper .element.element--opened {
+  background: #83dfc4;
+  box-shadow: inset 1px 1px 20px rgba(0, 0, 0, 0.8);
+  color: #272727;
+}
+#saper .element.element--bomb {
+  background: #f1a28d;
+}
+.messageBox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translateX(-50%);
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  display: none;
+}
+.messageBox span {
+  opacity: 0;
+  transition: all 600ms ease-in-out;
+  font-size: 24px;
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+.messageBox #nextLevel {
+  padding: 15px;
+  background: #83dfc4;
+  color: #121212;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 300ms ease-in-out;
+}
+.messageBox #nextLevel:hover {
+  border: 1px solid #83dfc4;
+}
+.messageBox.show {
+  opacity: 1;
+  display: flex;
+}
+.messageBox.show span {
+  opacity: 1;
+}
+.warning {
+  background: #f7c689;
+  padding: 20px 30px;
+  color: #121212;
+  font-size: 22px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transition: all 1000ms ease-in-out;
+  opacity: 0;
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+.leadersBox {
+  background: #272727;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  min-width: 10vw;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.leadersBox h4 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 18px;
+  color: #83dfc4;
+}
+.leadersBox .titleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #121212;
+}
+.leadersBox ul.leadersList {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  transition: all 600ms ease-in-out;
+}
+.leadersBox ul.leadersList li.item {
+  border-bottom: 1px solid #83dfc4;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  line-height: 1em;
+  transition: all 600ms ease-in-out;
+}
+.leadersBox ul.leadersList li.item .number {
+  display: inline-block;
+  flex: 1 1 10%;
+  text-align: left;
+}
+.leadersBox ul.leadersList li.item .levelsCount {
+  display: inline-block;
+  flex: 1 1 60%;
+  text-align: center;
+}
+.leadersBox ul.leadersList li.item .recordTime {
+  display: inline-block;
+  flex: 1 1 30%;
+  text-align: right;
+}
