@@ -109,7 +109,7 @@ let setup = () => {
 	});
 }
 
-// поменять
+// Проверка не пустая ли клетка (то есть если не содержит цифру открывать другие)
 const checkNull = (el, position) => {
 	let pos = position.split(',');
 	let x = parseInt(pos[0]);
